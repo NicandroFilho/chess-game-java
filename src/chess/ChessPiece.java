@@ -16,17 +16,4 @@ public abstract class ChessPiece extends Piece {
     public Color getColor() {
         return color;
     }
-
-
-
-    //public ChessPosition chessPosition(){
-
-    //}
-
-
-
-    @Override
-    public Piece[][] possibleMoves() {
-        return new Piece[0][];
-    }
 }

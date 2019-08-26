@@ -21,15 +21,23 @@ public abstract class Piece {
         return board;
     }
 
-    public abstract Piece[][] possibleMoves();
+    public abstract boolean[][] possibleMoves();
 
     public boolean possibleMove(Position position){
-        // TODO: 23/08/2019
-        return false;
+        return possibleMoves()[position.getRow()][position.getColumn()];
     }
 
+
     public boolean isThereAnyPossibleMove(){
-        // TODO: 23/08/2019
+
+        boolean[][] mat = possibleMoves();
+        for(int row = 0; row < mat.length; row++){
+            for(int col = 0; col < mat[row].length; col++){
+                if(mat[row][col]){
+                    return true;
+                }
+            }
+        }
         return false;
     }
 }
