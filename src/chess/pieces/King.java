@@ -72,10 +72,6 @@ public class King extends ChessPiece {
             mat[pAux.getRow()][pAux.getColumn()] = true;
         }
 
-
-
-
-
         return mat;
     }
 
