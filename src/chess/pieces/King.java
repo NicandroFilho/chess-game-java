@@ -1,7 +1,6 @@
 package chess.pieces;
 
 import boardgame.Board;
-import boardgame.Piece;
 import boardgame.Position;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -23,7 +22,7 @@ public class King extends ChessPiece {
 
     @Override
     public boolean[][] possibleMoves() {
-        boolean mat[][] = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
         Position pAux = new Position(0, 0);
 
@@ -103,7 +102,7 @@ public class King extends ChessPiece {
         return mat;
     }
 
-    public boolean canMove(Position position){
+    private boolean canMove(Position position){
         ChessPiece p = (ChessPiece) getBoard().piece(position);
         return p == null || p.getColor() != getColor();
     }

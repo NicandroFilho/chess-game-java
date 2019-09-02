@@ -58,7 +58,7 @@ public class Board {
         return aux;
     }
 
-    public boolean positionExists(int row, int column){
+    private boolean positionExists(int row, int column){
         return row >= 0 && row < this.rows && column >= 0 && column < this.columns;
     }
 

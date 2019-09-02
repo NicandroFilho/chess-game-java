@@ -8,7 +8,7 @@ import chess.Color;
 
 public class Pawn extends ChessPiece {
 
-    ChessMatch chessMatch;
+    private ChessMatch chessMatch;
 
     public Pawn(Board board, Color color, ChessMatch chessMatch) {
         super(board, color);
@@ -22,7 +22,7 @@ public class Pawn extends ChessPiece {
 
     @Override
     public boolean[][] possibleMoves() {
-        boolean mat[][] = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
         Position p = new Position(0, 0);
 

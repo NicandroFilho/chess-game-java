@@ -1,13 +1,10 @@
 package chess;
 
 import boardgame.Board;
-import boardgame.BoardException;
 import boardgame.Piece;
 import boardgame.Position;
-import chess.ChessPosition;
 import chess.pieces.*;
 
-import java.awt.*;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
@@ -216,7 +213,7 @@ public class ChessMatch {
 
         // #Specialmove en passant
         if(p instanceof Pawn){
-            if(source.getColumn()!=target.getColumn() && capturedPieces == enPassantVulnerable){
+            if(source.getColumn()!=target.getColumn() && capturedPiece == enPassantVulnerable){
                 ChessPiece pawn = (ChessPiece)board.removePiece(target);
 
                 Position pawnPosition;
@@ -306,7 +303,7 @@ public class ChessMatch {
         return true;
     }
 
-    public void placeNewPiece(char column, int row, ChessPiece piece){
+    private void placeNewPiece(char column, int row, ChessPiece piece){
         board.placePiece(piece, new ChessPosition(column,row).toPosition());
         piecesOnTheBoard.add(piece);
     }

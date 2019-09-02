@@ -1,7 +1,6 @@
 package chess.pieces;
 
 import boardgame.Board;
-import boardgame.Piece;
 import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
@@ -13,7 +12,7 @@ public class Knight extends ChessPiece {
 
 
     /*Can move if the target position is empty or the piece at target position is an Opponents Piece*/
-    boolean canMove(Position targetPosition){
+    private boolean canMove(Position targetPosition){
         ChessPiece chessPiece = (ChessPiece)getBoard().piece(targetPosition);
         return chessPiece==null || chessPiece.getColor() != getColor();
     }

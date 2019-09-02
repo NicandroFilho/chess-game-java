@@ -1,7 +1,6 @@
 package chess;
 
 import boardgame.Position;
-import chess.ChessException;
 
 public class ChessPosition {
 
@@ -24,11 +23,11 @@ public class ChessPosition {
         return row;
     }
 
-    protected Position toPosition(){
+    Position toPosition(){
         return new Position(8 - row, column - 'a');
     }
 
-    protected static ChessPosition fromPosition(Position position){
+    static ChessPosition fromPosition(Position position){
         return new ChessPosition((char)('a'+ position.getColumn()), 8 - position.getRow());
     }
 

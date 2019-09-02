@@ -11,36 +11,36 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class UI {
+class UI {
 
     // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
 
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    // private static final String ANSI_BLACK = "\u001B[30m";
+    // private static final String ANSI_RED = "\u001B[31m";
+    // private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
+    // private static final String ANSI_BLUE = "\u001B[34m";
+    // private static final String ANSI_PURPLE = "\u001B[35m";
+    // private static final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_WHITE = "\u001B[37m";
 
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
-    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
-    public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+    // private static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    // private static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+    // private static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+    // private static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+    // private static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+    //private static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    private static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
+    // private static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
     // https://stackoverflow.com/questions/2979383/java-clear-the-console
-    public static void clearScreen() {
+    static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    public static ChessPosition readChessPosition(Scanner sc){
+    static ChessPosition readChessPosition(Scanner sc){
         try {
             String s = sc.nextLine();
             char column = s.charAt(0);
@@ -53,7 +53,7 @@ public class UI {
         }
     }
 
-    public static void printMatch(ChessMatch chessMatch, List<ChessPiece> captured) {
+    static void printMatch(ChessMatch chessMatch, List<ChessPiece> captured) {
         printBoard(chessMatch.getPieces());
         System.out.println();
         printCapturedPieces(captured);
@@ -71,7 +71,7 @@ public class UI {
         }
     }
 
-    public static void printBoard(ChessPiece[][] pieces ){
+    private static void printBoard(ChessPiece[][] pieces){
         for(int row = 0; row < pieces.length; row++){
             System.out.print(8 - row + " ");
             for(int col = 0; col < pieces[row].length; col++){
@@ -82,7 +82,7 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
-    public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves ){
+    static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves){
         for(int row = 0; row < pieces.length; row++){
             System.out.print(8 - row + " ");
             for(int col = 0; col < pieces[row].length; col++){

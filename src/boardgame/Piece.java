@@ -31,9 +31,9 @@ public abstract class Piece {
     public boolean isThereAnyPossibleMove(){
 
         boolean[][] mat = possibleMoves();
-        for(int row = 0; row < mat.length; row++){
-            for(int col = 0; col < mat[row].length; col++){
-                if(mat[row][col]){
+        for (boolean[] booleans : mat) {
+            for (boolean aBoolean : booleans) {
+                if (aBoolean) {
                     return true;
                 }
             }
